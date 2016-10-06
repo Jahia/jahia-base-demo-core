@@ -23,7 +23,7 @@
 <%-- get banner image url. If not provided use default --%>
 <c:choose>
     <c:when test="${not empty bannerImg}">
-        <template:module node='${bannerImg}' editable='false' view='hidden.contentURL' var="bannerUrl"/>
+        <template:module path='${bannerImg.node.path}' editable='false' view='hidden.contentURL' var="bannerUrl"/>
     </c:when>
     <c:otherwise>
         <c:url value="${url.currentModule}/img/default_banner_img.jpg" var="bannerUrl"/>
