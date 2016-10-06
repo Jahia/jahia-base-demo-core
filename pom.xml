@@ -96,6 +96,7 @@
                 <configuration>
                     <instructions>
                         <Jahia-Depends>default</Jahia-Depends>
+                        <Jahia-Module-Priority>10</Jahia-Module-Priority>
                     </instructions>
                 </configuration>
             </plugin>
