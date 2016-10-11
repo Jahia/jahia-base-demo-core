@@ -59,8 +59,9 @@
   <name>dx-base-demo-core</name>
   <description>This is the custom module (dx-base-demo-core) for running on a Digital Experience Manager server.</description>
   <scm>
-    <connection>scm:dummy:uri</connection>
-    <developerConnection>scm:dummy:uri</developerConnection>
+    <connection>scm:git:git@github.com:Jahia/dx-base-demo-core.git</connection>
+    <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-core.git</developerConnection>
+    <url>https://github.com/Jahia/dx-base-demo-core</url>
   </scm>
   <properties>
     <jahia-depends>default,event,rating,topstories</jahia-depends>
