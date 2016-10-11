@@ -53,7 +53,7 @@
   </parent>
   <groupId>org.jahia.modules</groupId>
   <artifactId>dx-base-demo-core</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>dx-base-demo-core</name>
   <description>This is the custom module (dx-base-demo-core) for running on a Digital Experience Manager server.</description>
@@ -61,7 +61,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-core.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-core.git</developerConnection>
     <url>https://github.com/Jahia/dx-base-demo-core</url>
-    <tag>dx-base-demo-core-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia-depends>default,event,rating,topstories</jahia-depends>
