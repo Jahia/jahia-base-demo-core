@@ -22,11 +22,8 @@
     <c:set var="linknode" value="${linkreference.node}"/>
 
     <c:if test="${not empty linknode}">
-        <template:module node='${linknode}' editable='false' view='hidden.contentURL' var="imageUrl"/>
-        <template:module node='${linknode}' editable='false' view='hidden.displayableName' var="imageDisplayableName"/>
-
-        <c:set var="linkUrl" value="${imageUrl}"/>
-        <c:set var="linkTitle"> title="${imageDisplayableName}"</c:set>
+        <template:module node='${linknode}' editable='false' view='hidden.contentURL' var="linkUrl"/>
+        <template:module node='${linknode}' editable='false' view='hidden.displayableName' var="linkTitle"/>
     </c:if>
     <c:if test="${empty linkUrl and not empty externalUrl}">
         <c:if test="${!functions:matches('^[A-Za-z]*:.*', externalUrl.string)}">
