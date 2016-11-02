@@ -28,7 +28,7 @@
         GNU General Public License for more details.
 
         You should have received a copy of the GNU General Public License
-        along with this program. If not, see <http://www.gnu.org/licenses />.
+        along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
         2/ JSEL - Commercial and Supported Versions of the program
@@ -51,11 +51,10 @@
     <artifactId>jahia-modules</artifactId>
     <version>7.1.2.0</version>
   </parent>
-  <groupId>org.jahia.modules</groupId>
   <artifactId>dx-base-demo-core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>dx-base-demo-core</name>
+  <name>DX Base Demo Core</name>
   <description>This is the custom module (dx-base-demo-core) for running on a Digital Experience Manager server.</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-core.git</connection>
@@ -71,6 +70,20 @@
       <groupId>org.mnode.ical4j</groupId>
       <artifactId>ical4j</artifactId>
       <version>1.0.3</version>
+      <exclusions>
+          <exclusion>
+              <artifactId>commons-logging</artifactId>
+              <groupId>commons-logging</groupId>
+          </exclusion>
+          <exclusion>
+              <artifactId>commons-codec</artifactId>
+              <groupId>commons-codec</groupId>
+          </exclusion>
+          <exclusion>
+              <artifactId>commons-lang</artifactId>
+              <groupId>commons-lang</groupId>
+          </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
   <repositories>
