@@ -383,3 +383,7 @@
   width: 26px;
   /*color: #bfbfbf;*/
 }
+
+select::-ms-expand {
+  display: none;
+}
