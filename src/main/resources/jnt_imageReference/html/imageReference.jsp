@@ -12,7 +12,7 @@
 <c:if test="${not empty node}">
     <template:module node='${node}' editable='false' view='hidden.contentURL' var="url"/>
     <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%"
-         height="auto"/> />
+         height="100%"/> />
 </c:if>
 <c:if test="${empty node and renderContext.editMode}">
     <fmt:message key="label.missingReference"/>
