@@ -10,10 +10,16 @@
 <c:set var="node" value="${reference.node}"/>
 <%-- display image if referenced image is available --%>
 <c:if test="${not empty node}">
+    <template:addCacheDependency node="${rnode}" />
     <template:module node='${node}' editable='false' view='hidden.contentURL' var="url"/>
     <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%"
          height="100%"/> />
 </c:if>
-<c:if test="${empty node and renderContext.editMode}">
-    <fmt:message key="label.missingReference"/>
+<c:if test="${empty node}">
+    <c:if test="${not empty reference}">
+        <template:addCacheDependency path="${reference.string}" />
+    </c:if>
+    <c:if test="${renderContext.editMode}">
+        <fmt:message key="label.missingReference"/>
+    </c:if>
 </c:if>

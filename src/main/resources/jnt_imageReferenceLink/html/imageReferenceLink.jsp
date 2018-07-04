@@ -15,6 +15,7 @@
 <c:set var="node" value="${reference.node}"/>
 <%-- only display if image is available --%>
 <c:if test="${not empty node}">
+    <template:addCacheDependency node="${node}" />
     <template:module node='${node}' editable='false' view='hidden.contentURL' var="imageUrl"/>
 
     <%-- check that the url is valie --%>
@@ -46,6 +47,7 @@
 </c:if>
 <c:if test="${empty node}">
     <c:if test="${not empty reference}">
+        <template:addCacheDependency path="${reference.string}" />
     </c:if>
     <c:if test="${renderContext.editMode}">
         <fmt:message key="label.empty"/>
