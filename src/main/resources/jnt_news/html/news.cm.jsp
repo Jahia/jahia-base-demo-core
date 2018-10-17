@@ -17,15 +17,16 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="css" resources="cm.css" />
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
-<div style="background: #fff; width: 100%; display: block; font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 1.6; color: #333;">
-	<h1 style="font-size: 32px; font-weight: 200; margin: 0 0 20px; line-height: 45px; text-transform: uppercase; color: #555; font-family: Open Sans,Arial,sans-serif;">${currentNode.properties['jcr:title'].string}</h1>
+<news class="newsFullPreview">
+	<h1>${currentNode.properties['jcr:title'].string}</h1>
         <c:if test="${not empty newsImage.node}">
-            <img style="width: 100%; max-width: 840px;" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt="">
+            <img class="newsFullPreview" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt="news">
         </c:if>
-	<div style="padding: 30px;">
-  		<p style="margin-left: -5px;	margin-top: 0; margin-bottom: 10px;	color: #555; font-style: italic; display: inline-block; padding-right: 5px; padding-left: 5px;">${newsDate}</p>
+	<div>
+  		<span>${newsDate}</span>
   		${currentNode.properties['desc'].string}
 	</div>
-</div>
+</news>
