@@ -10,7 +10,7 @@
 	<c:when test="${not empty boundComponent && jcr:isNodeType(boundComponent, 'jmix:list')}">
 		<c:set var="props" value="${currentNode.propertiesAsString}"/>
 		<c:if test="${!renderContext.editMode}">
-			<c:set var="targetProps" value="${bindedComponent.propertiesAsString}"/>
+			<c:set var="targetProps" value="${boundComponent.propertiesAsString}"/>
 			<c:if test="${not empty locationMapKey}">
 				<c:set var="mapKey" value="&amp;key=${locationMapKey}"/>
 			</c:if>
@@ -43,7 +43,7 @@
 							<c:set var="location" value="${targetProps['j:street']}" />
 							<c:set var="location" value="${location}${not empty location ? ', ' : ''}${targetProps['j:zipCode']}" />
 							<c:set var="location" value="${location}${not empty location ? ', ' : ''}${targetProps['j:town']}" />
-							<jcr:nodePropertyRenderer name="j:country" node="${bindedComponent}" renderer="country" var="country" />
+							<jcr:nodePropertyRenderer name="j:country" node="${item}" renderer="country" var="country" />
 							<c:set var="location" value="${location}${not empty location ? ', ' : ''}${country.displayName}" />
 							</c:otherwise>
 							</c:choose>
@@ -84,6 +84,7 @@
 						// Display multiple markers on a map
 						var infoWindow = new google.maps.InfoWindow(), marker, i;
 
+
 						// Loop through our array of markers & place each one on the map
 						for( i = 0; i < markers.length; i++ ) {
 							var position = new google.maps.LatLng(markers[i]['latitude'], markers[i]['longitude']);
@@ -105,6 +106,7 @@
 							// Automatically center the map fitting all markers on the screen
 							map.fitBounds(bounds);
 						}
+
 
 						// Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
 						var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
