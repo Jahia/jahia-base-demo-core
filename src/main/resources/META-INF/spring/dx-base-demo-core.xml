@@ -6,5 +6,6 @@
     <bean class="org.jahia.modules.jahiademo.actions.GenerateEventIcs">
         <property name="name" value="generateEventIcs"/>
         <property name="requireAuthenticatedUser" value="false"/>
+        <property name="requiredMethods" value="GET"/>
     </bean>
 </beans>
