@@ -49,7 +49,7 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>8.0.0.0</version>
+    <version>8.0.1.0-SNAPSHOT</version>
   </parent>
   <artifactId>dx-base-demo-core</artifactId>
   <version>2.1.0-SNAPSHOT</version>
@@ -64,7 +64,7 @@
   </scm>
   <properties>
     <jahia-depends>default,event,rating,topstories</jahia-depends>
-    <jahia-module-signature>MC0CFQCTEryRbup1hLwTeO6ip6OzKP7wAwIUX2b3mV/VCFref/tNiuWQVe2DOIg=</jahia-module-signature>
+    <jahia-module-signature>MCwCFAhFAAVAsc4mVaJMec3DqCl0HNaDAhRxip/SS5AJcHMMv4mLHUflo0gwzA==</jahia-module-signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
   <dependencies>
