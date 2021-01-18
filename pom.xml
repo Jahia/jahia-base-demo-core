@@ -64,7 +64,7 @@
   </scm>
   <properties>
     <jahia-depends>default,event,rating,topstories</jahia-depends>
-    <jahia-module-signature>MCwCFAhFAAVAsc4mVaJMec3DqCl0HNaDAhRxip/SS5AJcHMMv4mLHUflo0gwzA==</jahia-module-signature>
+    <Jahia-Signature>MC0CFHHNn48TfeZS1FZsLjN5TY194dFzAhUAgC9ZwssyXfS2zUkUEllijcYIY8s=</Jahia-Signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
   <dependencies>
