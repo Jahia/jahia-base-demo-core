@@ -52,7 +52,7 @@
     <version>7.1.2.0</version>
   </parent>
   <artifactId>dx-base-demo-core</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>DX Base Demo Core</name>
   <description>This is the custom module (dx-base-demo-core) for running on a Digital Experience Manager server.</description>
