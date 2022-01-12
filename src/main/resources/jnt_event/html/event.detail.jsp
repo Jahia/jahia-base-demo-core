@@ -71,10 +71,11 @@
 <%-- add to calendar --%>
 <c:if test="${not empty startDate}">
     <%-- download ICS file --%>
-    <c:url var="icsUrl" value="${url.base}${currentNode.path}.generateEventIcs.do"/>
+    <c:url var="icsUrl" value="${renderContext.liveMode ? url.baseLive : url.basePreview}${currentNode.path}.generateEventIcs.do"/>
     <fmt:message key="jnt_event.ics"/>:&nbsp;
-    <a data-placement="top" data-toggle="tooltip" class="ics	tooltips"
-       data-original-title="<fmt:message key="jnt_event.ics"/>" href="${icsUrl}" target="_blank" onclick="window.location.reload(true);"><i class="fa fa-calendar"></i></a>
+    <a data-placement="top" data-toggle="tooltip" class="ics tooltips"
+       data-original-title="<fmt:message key="jnt_event.ics"/>" href="${icsUrl}"
+       target="_blank" onclick="window.location.reload(true);"><i class="fa fa-calendar"></i></a>
     <p/>
 </c:if>
 
