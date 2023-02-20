@@ -63,7 +63,7 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <jahia-depends>default,event,rating,topstories</jahia-depends>
+    <jahia-depends/>
     <jahia-module-signature>MCwCFBuMWuFa1OAtblz4b56lqn+UjvpNAhQICgprBBH2aEyy9hY1C8S6KCIQ8Q==</jahia-module-signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
