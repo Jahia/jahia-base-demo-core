@@ -18,7 +18,8 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 <c:if test="${not empty newsImage}">
-    <template:module node='${newsImage}' editable='false' view='hidden.contentURL' var="imageUrl"/>
+    <template:addCacheDependency node="${newsImage}"/>
+    <c:url var="imageUrl" value="${newsImage.url}" context="/"/>
     <div class="timeline-heading">
         <img class="img-responsive" src="${imageUrl}" alt=""/>
     </div>

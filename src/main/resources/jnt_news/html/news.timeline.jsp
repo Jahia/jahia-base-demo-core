@@ -28,7 +28,8 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <img class="img-responsive" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt=""/>
+                        <template:addCacheDependency node="${newsImage.node}"/>
+                        <img class="img-responsive" src="<c:url value="${newsImage.node.url}" context="/"/>" alt=""/>
 
                         <div class="md-margin-bottom-20"></div>
                     </div>

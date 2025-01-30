@@ -46,7 +46,8 @@
                         <img src="${photoUrl}" alt="${name}"/>
                     </c:when>
                     <c:otherwise>
-                        <img src="<template:module node='${photo.node}' editable='false' view='hidden.contentURL' />" alt="${name}"/>
+                        <template:addCacheDependency node="${photo.node}"/>
+                        <img src="<c:url value="${photo.node.url}" context="/"/>" alt="${name}"/>
                     </c:otherwise>
                 </c:choose>
 

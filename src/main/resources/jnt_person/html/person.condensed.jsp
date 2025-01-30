@@ -33,7 +33,8 @@
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
-        <template:module node='${photo.node}' editable='false' view='hidden.contentURL' var="photoUrl" />
+        <template:addCacheDependency node="${photo.node}"/>
+        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 

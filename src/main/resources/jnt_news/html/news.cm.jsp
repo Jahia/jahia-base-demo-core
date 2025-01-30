@@ -22,9 +22,10 @@
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 <news class="newsFullPreview">
 	<h1>${currentNode.properties['jcr:title'].string}</h1>
-        <c:if test="${not empty newsImage.node}">
-            <img class="newsFullPreview" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt="news">
-        </c:if>
+	<c:if test="${not empty newsImage.node}">
+		<template:addCacheDependency node="${newsImage.node}"/>
+		<img class="newsFullPreview" src="<c:url value="${newsImage.node.url}" context="/"/>" alt="news">
+	</c:if>
 	<div>
   		<span>${newsDate}</span>
   		${currentNode.properties['desc'].string}

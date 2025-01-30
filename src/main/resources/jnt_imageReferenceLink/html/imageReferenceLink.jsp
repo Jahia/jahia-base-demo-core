@@ -16,14 +16,15 @@
 <%-- only display if image is available --%>
 <c:if test="${not empty node}">
     <template:addCacheDependency node="${node}" />
-    <template:module node='${node}' editable='false' view='hidden.contentURL' var="imageUrl"/>
+    <c:url var="imageUrl" value="${node.url}" context="/"/>
 
     <%-- check that the url is valie --%>
     <c:if test="${not empty target.string}"><c:set var="target"> target="${target.string}"</c:set></c:if>
     <c:set var="linknode" value="${linkreference.node}"/>
 
     <c:if test="${not empty linknode}">
-        <template:module node='${linknode}' editable='false' view='hidden.contentURL' var="linkUrl"/>
+        <template:addCacheDependency node="${linknode}"/>
+        <c:url var="linkUrl" value="${linknode.url}" context="/"/>
         <template:module node='${linknode}' editable='false' view='hidden.displayableName' var="linkTitle"/>
     </c:if>
     <c:if test="${empty linkUrl and not empty externalUrl}">
