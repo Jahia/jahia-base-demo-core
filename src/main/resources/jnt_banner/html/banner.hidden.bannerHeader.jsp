@@ -23,7 +23,8 @@
 <%-- get banner image url. If not provided use default --%>
 <c:choose>
     <c:when test="${not empty bannerImg}">
-        <template:module path='${bannerImg.node.path}' editable='false' view='hidden.contentURL' var="bannerUrl"/>
+        <template:addCacheDependency node="${bannerImg.node}"/>
+        <c:url var="bannerUrl" value="${bannerImg.node.url}" context="/"/>
     </c:when>
     <c:otherwise>
         <c:url value="${url.currentModule}/img/default_banner_img.jpg" var="bannerUrl"/>

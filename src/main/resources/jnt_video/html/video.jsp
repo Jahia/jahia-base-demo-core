@@ -37,7 +37,8 @@
                preload="${renderContext.editMode ? "metadata" : "auto"}"
                width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
                data-setup='{"techOrder":["html5"]}'>
-          <source src="<template:module node='${currentNode.properties.source.node}' editable='false' view='hidden.contentURL' />" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
+            <template:addCacheDependency node="${currentNode.properties.source.node}"/>
+          <source src="<c:url value="${currentNode.properties.source.node.url}" context="/"/>" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
         </video>
     </c:otherwise>
 </c:choose>

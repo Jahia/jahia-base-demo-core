@@ -26,7 +26,8 @@
     <c:when test="${nodePosition == 1 && topLevel == 'first'}">
         <div class="news-v3 margin-bottom-20">
             <c:if test="${not empty newsImage}">
-                <a href="${detailUrl}"><img class="img-responsive full-width" src="<template:module node='${newsImage}' editable='false' view='hidden.contentURL' />" alt="${newsTitle}"></a>
+                <template:addCacheDependency node="${newsImage}"/>
+                <a href="${detailUrl}"><img class="img-responsive full-width" src="<c:url value="${newsImage.url}" context="/"/>" alt="${newsTitle}"></a>
             </c:if>
             <div class="news-v3-in">
                 <template:include view="hidden.tagListView"/>
@@ -46,7 +47,8 @@
         </c:if>
         <div class="col-md-4 sm-margin-bottom-20">
             <div class="news-v2-badge">
-                <a href="${detailUrl}"><img class="img-responsive" src="<template:module node='${newsImage}' editable='false' view='hidden.contentURL' />" alt="${newsTitle}"></a>
+                <template:addCacheDependency node="${newsImage}"/>
+                <a href="${detailUrl}"><img class="img-responsive" src="<c:url value="${newsImage.url}" context="/"/>" alt="${newsTitle}"></a>
                 <p>
                     <span>${newsDay}</span>
                     <small>${newsMonth}</small>
