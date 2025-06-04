@@ -21,13 +21,13 @@
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 <news class="newsFullPreview">
-	<h1>${currentNode.properties['jcr:title'].string}</h1>
+	<h1>${fn:escapeXml(currentNode.properties['jcr:title'].string)}</h1>
 	<c:if test="${not empty newsImage.node}">
 		<template:addCacheDependency node="${newsImage.node}"/>
 		<img class="newsFullPreview" src="<c:url value="${newsImage.node.url}" context="/"/>" alt="news">
 	</c:if>
 	<div>
-  		<span>${newsDate}</span>
+  		<span>${fn:escapeXml(newsDate)}</span>
   		${currentNode.properties['desc'].string}
 	</div>
 </news>
