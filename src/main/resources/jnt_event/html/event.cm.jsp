@@ -21,16 +21,16 @@
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['startDate'].time}" var="startDate"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['endDate'].time}" var="endDate"/>
 <event class="eventPreview">
-  <h1>  ${currentNode.properties['jcr:title'].string}</h1>
+  <h1>${fn:escapeXml(currentNode.properties['jcr:title'].string)}</h1>
   <div>
     <ul>
         <c:if test="${not empty currentNode.properties['eventsType']}">
-			<li><span>${currentNode.properties['eventsType'].string}</span></li>
+			<li><span>${fn:escapeXml(currentNode.properties['eventsType'].string)}</span></li>
         </c:if>
-      <li><b>${currentNode.properties['location'].string}</b></li>
-	  <li>${startDate} 
+      <li><b>${fn:escapeXml(currentNode.properties['location'].string)}</b></li>
+	  <li>${fn:escapeXml(startDate)} 
 	   <c:if test="${not empty currentNode.properties['endDate']}">
-		- ${endDate}
+		- ${fn:escapeXml(endDate)}
 	   </c:if>
 	  </li>
     </ul>
