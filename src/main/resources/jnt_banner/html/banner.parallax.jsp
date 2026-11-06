@@ -24,8 +24,8 @@
      style='background:url("${moduleMap.bannerUrl}") no-repeat  center center / cover;'>
     <div class="container">
         <div class="headline-center headline-light">
-            <h2>${moduleMap.title}</h2>
-            <p>${moduleMap.headline}</p>
+            <h2>${fn:escapeXml(moduleMap.title)}</h2>
+            <p>${fn:escapeXml(moduleMap.headline)}</p>
             <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
                 <template:include view="parallaxLink"/>
             </c:if>

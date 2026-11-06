@@ -18,4 +18,4 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<li><i class="fa fa-tag">&nbsp;${currentNode.displayableName}</i></li>
+<li><i class="fa fa-tag">&nbsp;${fn:escapeXml(currentNode.displayableName)}</i></li>
