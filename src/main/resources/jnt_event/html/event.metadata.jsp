@@ -27,7 +27,7 @@
 <div class="headline"><h2><fmt:message key="jnt_event.eventLocation"/></h2></div>
 <ul class="list-unstyled who">
     <c:if test="${not empty location}">
-        <li>${location.string}</li>
+        <li>${fn:escapeXml(location.string)}</li>
     </c:if>
     <c:if test="${not empty street or not empty  town or not empty country}">
         <li>

@@ -31,12 +31,12 @@
 
 
 <!-- event title -->
-<h4><a href="${detailUrl}">${title}</a></h4>
+<h4><a href="${detailUrl}">${fn:escapeXml(title)}</a></h4>
 <!-- event type, date, location -->
 <ul class="list-inline">
     <li><strong><fmt:formatDate dateStyle="long" type="date"
                                 value="${startDate}"/></strong></li>
-    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+    <li><i class="fa  fa-map-marker"></i>&nbsp;${fn:escapeXml(location)}</li>
 </ul>
 
 <%-- event people if they exist --%>
