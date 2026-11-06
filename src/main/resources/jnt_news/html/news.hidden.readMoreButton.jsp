@@ -21,6 +21,6 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 <c:set var="description" value="${currentNode.properties['desc'].string}"/>
 
-<p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
+<p>${fn:escapeXml(fn:substring(functions:removeHtmlTags(description), 0, 150))}...</p>
 <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message
         key="jnt_news.read_more"/></a>
