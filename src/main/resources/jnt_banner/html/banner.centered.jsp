@@ -25,8 +25,8 @@
     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${moduleMap.bannerUrl}")'>
         <div class="container">
-            <h1>${moduleMap.title}</h1>
-            <p>${moduleMap.headline}</p>
+            <h1>${fn:escapeXml(moduleMap.title)}</h1>
+            <p>${fn:escapeXml(moduleMap.headline)}</p>
         </div>
     </div>
     <!--=== End Breadcrumbs v3 ===-->

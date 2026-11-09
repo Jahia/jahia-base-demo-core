@@ -15,6 +15,6 @@
 <ul class="list-unstyled blog-latest-posts margin-bottom-20">
     <li>
         <template:include view="hidden.smallView"/>
-        <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
+        <p>${fn:escapeXml(fn:substring(functions:removeHtmlTags(description), 0, 150))}...</p>
     </li>
 </ul>

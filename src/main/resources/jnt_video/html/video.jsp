@@ -38,7 +38,7 @@
                width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
                data-setup='{"techOrder":["html5"]}'>
             <template:addCacheDependency node="${currentNode.properties.source.node}"/>
-          <source src="<c:url value="${currentNode.properties.source.node.url}" context="/"/>" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
+          <source src="<c:url value="${currentNode.properties.source.node.url}" context="/"/>" type='${fn:escapeXml(mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string)}' />
         </video>
     </c:otherwise>
 </c:choose>

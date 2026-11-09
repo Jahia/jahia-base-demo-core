@@ -14,7 +14,7 @@
     <%-- display tags --%>
     <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
     <c:forEach items="${tags}" var="tag" varStatus="status">
-        <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
+        <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${fn:escapeXml(tag.string)}</li>
     </c:forEach>
     <li><fmt:message key="jnt_news.posted"/> ${newsDate}</li>
 </ul>

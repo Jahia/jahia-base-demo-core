@@ -41,7 +41,7 @@
         <div class=" shadow-wrapper">
             <div class="tag-box tag-box-v2 box-shadow shadow-effect-4">
                 <!-- event title -->
-                <h2><a href="${detailUrl}">${title}</a></h2>
+                <h2><a href="${detailUrl}">${fn:escapeXml(title)}</a></h2>
                 <!-- event type, date, location -->
                 <ul class="list-inline">
                     <c:if test="${not empty currentNode.properties.eventsType}">
@@ -54,7 +54,7 @@
                                         value="${startDate}"/>
                         <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date"
                                                                                        value="${endDate}"/></c:if></li>
-                    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+                    <li><i class="fa  fa-map-marker"></i>&nbsp;${fn:escapeXml(location)}</li>
                 </ul>
                 <!-- event body -->
                 <p>${fn:substring(functions:removeHtmlTags(body), 0, 150)}...</p>
