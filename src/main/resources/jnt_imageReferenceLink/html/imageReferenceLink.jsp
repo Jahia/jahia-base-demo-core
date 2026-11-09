@@ -25,7 +25,7 @@
     <c:if test="${not empty linknode}">
         <template:addCacheDependency node="${linknode}"/>
         <c:url var="linkUrl" value="${linknode.url}" context="/"/>
-        <template:module node='${linknode}' editable='false' view='hidden.displayableName' var="linkTitle"/>
+        <c:set var="linkTitle"> title="${fn:escapeXml(linknode.displayableName)}"</c:set>
     </c:if>
     <c:if test="${empty linkUrl and not empty externalUrl}">
         <c:if test="${!functions:matches('^[A-Za-z]*:.*', externalUrl.string)}">
