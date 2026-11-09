@@ -25,8 +25,8 @@
     <!--=== Breadcrumbs v1 ===-->
     <div class="breadcrumbs-v1" style='background:url("${moduleMap.bannerUrl}") no-repeat scroll center center / cover;'>
         <div class="container">
-            <span>${moduleMap.headline}</span>
-            <h1>${moduleMap.title}</h1>
+            <span>${fn:escapeXml(moduleMap.headline)}</span>
+            <h1>${fn:escapeXml(moduleMap.title)}</h1>
         </div>
     </div>
     <!--=== End Breadcrumbs v1 ===-->
