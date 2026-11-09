@@ -14,12 +14,12 @@
 
 <fmt:formatDate pattern="dd MMM, yyyy" dateStyle="short" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
-<h3><a href="${detailUrl}">${newsTitle}</a></h3>
+<h3><a href="${detailUrl}">${fn:escapeXml(newsTitle)}</a></h3>
 <small>${newsDate}
     <%-- display tags --%>
     <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
     <c:forEach items="${tags}" var="tag" varStatus="status">
-        <c:if test="${status.first}">&nbsp;<fmt:message key="jnt_news.in"/>&nbsp;</c:if>${tag.string}<c:if
+        <c:if test="${status.first}">&nbsp;<fmt:message key="jnt_news.in"/>&nbsp;</c:if>${fn:escapeXml(tag.string)}<c:if
             test="${not status.last}">,</c:if>
     </c:forEach>
 </small>

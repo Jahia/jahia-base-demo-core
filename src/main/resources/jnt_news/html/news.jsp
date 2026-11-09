@@ -27,7 +27,7 @@
     <div class="col-sm-7 news-v3">
         <div class="news-v3-in-sm no-padding">
             <template:include view="hidden.tagListView"/>
-            <h2><a href="${detailUrl}">${newsTitle}</a></h2>
+            <h2><a href="${detailUrl}">${fn:escapeXml(newsTitle)}</a></h2>
             <c:choose>
                 <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:removeReadMore')}">
                     <template:include view="hidden.readMoreButton"/>
