@@ -63,7 +63,7 @@
                 <ul class="pager">
 
                     <c:url var="moreStories" value=""/>
-                    <li class="next"><a href="${pageUrl}">${linkTitle} <i
+                    <li class="next"><a href="${pageUrl}">${fn:escapeXml(linkTitle)} <i
                             class="fa fa-angle-right"></i></a></li>
                 </ul>
             </c:if>
