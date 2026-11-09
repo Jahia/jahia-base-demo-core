@@ -19,8 +19,8 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="leadership.css"/>
 
-<c:set var="name" value="${currentNode.properties.firstname.string}&nbsp;${currentNode.properties.lastname.string}"/>
-<c:set var="title" value="${currentNode.properties.function.string}"/>
+<c:set var="name" value="${fn:escapeXml(currentNode.properties.firstname.string)}&nbsp;${fn:escapeXml(currentNode.properties.lastname.string)}"/>
+<c:set var="title" value="${fn:escapeXml(currentNode.properties.function.string)}"/>
 <c:set var="bio" value="${currentNode.properties.biography.string}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
 

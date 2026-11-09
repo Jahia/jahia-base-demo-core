@@ -19,8 +19,8 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="leadership.css"/>
 
-<c:set var="name" value="${currentNode.properties.firstname.string}&nbsp;${currentNode.properties.lastname.string}"/>
-<c:set var="title" value="${currentNode.properties.function.string}"/>
+<c:set var="name" value="${fn:escapeXml(currentNode.properties.firstname.string)}&nbsp;${fn:escapeXml(currentNode.properties.lastname.string)}"/>
+<c:set var="title" value="${fn:escapeXml(currentNode.properties.function.string)}"/>
 <%-- set bio variable as plain text by stripping the rich text html tags from it --%>
 <c:set var="bio" value="${functions:removeHtmlTags(currentNode.properties.biography.string)}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
@@ -41,7 +41,7 @@
 <li><a href="${personURL}"><img class="rounded-x center-block margin-bottom-20 margin-top-20 photo80" src="${photoUrl}"
                                  alt=""></a></li>
 <li><a href="${personURL}"><c:if test="${not empty title}"><strong>${title}:</strong> </c:if>${name}</a></li>
-<li><p>${fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... ')}</p></li>
+<li><p>${fn:escapeXml(fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... '))}</p></li>
 
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
     <template:include view="socialIcons.condensed"/>
