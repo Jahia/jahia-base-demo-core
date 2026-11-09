@@ -18,5 +18,5 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<c:set var="name" value="${currentNode.properties.firstname.string}&nbsp;${currentNode.properties.lastname.string}"/>
+<c:set var="name" value="${fn:escapeXml(currentNode.properties.firstname.string)}&nbsp;${fn:escapeXml(currentNode.properties.lastname.string)}"/>
 <li>${name}</li>

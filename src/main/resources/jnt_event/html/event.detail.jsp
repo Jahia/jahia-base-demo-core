@@ -31,7 +31,7 @@
 
 <%-- event title --%>
 <h2>
-    <a href="${detailUrl}">${title}</a>
+    <a href="${detailUrl}">${fn:escapeXml(title)}</a>
 </h2>
 <%-- event type, date, location --%>
 <ul class="list-inline">
@@ -47,7 +47,7 @@
         <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date" value="${endDate}"/>
         </c:if>
     </li>
-    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}
+    <li><i class="fa  fa-map-marker"></i>&nbsp;${fn:escapeXml(location)}
     </li>
 </ul>
 <%-- event body --%>
